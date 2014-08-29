@@ -8,7 +8,6 @@
   "indent": 2,
   "newcap": true,
   "noarg": true,
-  "node": true,
   "noempty": true,
   "nonbsp": true,
   "nonew": true,
