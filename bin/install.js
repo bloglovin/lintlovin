@@ -3,8 +3,7 @@
 
 var lib = {
   fs: require('fs'),
-  path: require('path'),
-  grunt: require('grunt')
+  path: require('path')
 };
 
 var root = lib.path.resolve(__dirname, '../');
@@ -33,7 +32,10 @@ if (!lib.fs.existsSync('Gruntfile.js')) {
 }
 
 if (lib.fs.existsSync('package.json')) {
-  var pkg = lib.grunt.file.readJSON('package.json');
+  var pkgSource = lib.fs.readFileSync('package.json', {
+    encoding: 'utf8'
+  });
+  var pkg = JSON.parse(pkgSource);
   if (!pkg.scripts) {
     pkg.scripts = {};
   }
