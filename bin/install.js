@@ -40,16 +40,17 @@ if (lib.fs.existsSync('package.json')) {
     pkg.scripts = {};
   }
 
+  var testCommand = 'node -e "require(\'grunt\').tasks([\'test\']);"';
   if (!pkg.scripts.test || pkg.scripts.test.indexOf('no test specified') !== -1) {
-    pkg.scripts.test = "node -e \"require('grunt').tasks(['test']);\"";
+    pkg.scripts.test = testCommand;
   }
   else {
     console.error('A test script has already been specified.');
-    console.error('Set it to', JSON.stringify("node -e \"require('grunt').tasks(['test']);\""), 'to use grunt for tests.');
+    console.error('Set it to', testCommand, 'to use grunt for tests.');
   }
 
   if (!pkg.scripts.prepush) {
-    pkg.scripts.prepush = "npm test";
+    pkg.scripts.prepush = 'npm test';
   }
 
   lib.fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');

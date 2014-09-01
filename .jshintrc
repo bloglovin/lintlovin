@@ -1,4 +1,5 @@
 {
+  "asi": false,
   "bitwise": true,
   "camelcase": false,
   "curly": true,
@@ -6,13 +7,14 @@
   "freeze": true,
   "immed": true,
   "indent": 2,
+  "latedef": "nofunc",
   "newcap": true,
   "noarg": true,
   "noempty": true,
   "nonbsp": true,
   "nonew": true,
+  "quotmark": "single",
   "strict": true,
-  "trailing": true,
   "undef": true,
   "unused": true
 }
