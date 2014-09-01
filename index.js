@@ -18,14 +18,13 @@ exports.initConfig = function (grunt, config, options) {
   var defaults = {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: [
-        'index.js',
-        'Gruntfile.js',
+      files: _.union([
+        '*.js',
         'lib/**/*.js',
         'test/**/*.js',
         'bin/**/*.js',
         'cli/**/*.js'
-      ],
+      ], options.jsFiles || []),
       options: { jshintrc: '.jshintrc' }
     },
     lintspaces: {

@@ -30,3 +30,17 @@ To run tests continually while editing run `grunt watch` in your project. To run
 ```
 
 Rationale for not forcing camelCase: It's quite common to get data from modules and APIs that doesn't use camel case, that would then generate errors when you try to access non-camel properties.
+
+## lintlovin.initConfig(grunt[, options])
+
+To be run from the parent project's Gruntfile.js to initialize Grunt with a basic config by sending the `grunt` object into it. One can also optionally define some options:
+
+* **jsFiles** – an array of additional files to watch and lint. By default `.js`-files in top folder or below the `bin/`, `cli/`, `lib/` or `test/` folders will be watched and linted. (Also any non-js file in `test/` will be watched and will thus retrigger a test when changed)
+* **noMocha** – disables the [Mocha](http://visionmedia.github.io/mocha/) tests. Mocha tests are otherwise run if a `test`-folder is found in the parent project.
+
+## Changelog
+
+### 1.4.0
+
+* New: Added an option, `jsFiles`, to add additional files to watch and lint
+* Change: Made it so all top level js-files are watched and linted by default
