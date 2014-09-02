@@ -1,12 +1,14 @@
 {
   "name": "lintlovin",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "The upholder of Bloglovin standards",
   "main": "index.js",
   "scripts": {
     "test": "node -e \"require('grunt').tasks(['test']);\"",
+    "test-all": "node -e \"require('grunt').tasks(['test-all']);\"",
     "prepush": "npm test",
-    "install": "node bin/install.js"
+    "install": "node bin/install.js",
+    "update": "node bin/install.js"
   },
   "author": "Hugo Wetterberg <hugo@wetterberg.nu>",
   "license": "MIT",
@@ -18,7 +20,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-lintspaces": "~0.6.0",
-    "grunt-mocha-istanbul": "^2.0.0",
+    "grunt-mocha-istanbul": "git://github.com/voxpelli/grunt-mocha-istanbul.git#use-grunt-file-resolve",
     "grunt-notify": "~0.3.1",
     "lodash": "^2.4.1"
   },

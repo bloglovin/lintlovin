@@ -32,12 +32,12 @@ exports.initConfig = function (grunt, config, options) {
       options: { editorconfig: '.editorconfig' }
     },
     watch: {
-      jshint : {
+      basic : {
         files: [
           '<%= lintspaces.files %>',
           'test/**/*'
         ],
-        tasks: ['test']
+        tasks: [!options.noMocha && options.integrationWatch ? 'test-all' : 'test']
       }
     }
   };
@@ -48,8 +48,11 @@ exports.initConfig = function (grunt, config, options) {
         ui: 'tdd'
       },
       basic: {
-        src: 'test'
+        src: ['test/**/*.js', '!test/integration/**/*.js']
       },
+      integration: {
+        src: ['test/integration/**/*.js']
+      }
     };
   }
 
@@ -80,5 +83,6 @@ exports.initConfig = function (grunt, config, options) {
   process.chdir(cwd);
 
   grunt.registerTask('test', testTasks);
+  grunt.registerTask('test-all', options.noMocha ? 'test' : ['test', 'mocha_istanbul:integration']);
   grunt.registerTask('default', 'test');
 };
