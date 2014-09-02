@@ -15,6 +15,12 @@ exports.initConfig = function (grunt, config, options) {
     options.noMocha = !lib.fs.existsSync('test');
   }
 
+  if (options.noMocha) {
+    options.noIntegration = true;
+  } else if (options.noIntegration === undefined) {
+    options.noIntegration = !lib.fs.existsSync('test/integration');
+  }
+
   var defaults = {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
@@ -83,6 +89,6 @@ exports.initConfig = function (grunt, config, options) {
   process.chdir(cwd);
 
   grunt.registerTask('test', testTasks);
-  grunt.registerTask('test-all', options.noMocha ? 'test' : ['test', 'mocha_istanbul:integration']);
+  grunt.registerTask('test-all', options.noIntegration ? 'test' : ['test', 'mocha_istanbul:integration']);
   grunt.registerTask('default', 'test');
 };

@@ -44,7 +44,7 @@ if (lib.fs.existsSync('package.json')) {
   if (!pkg.scripts.test || pkg.scripts.test.indexOf('no test specified') !== -1) {
     pkg.scripts.test = testCommand;
   }
-  else if (pkg.scripts.test.indexOf(testCommand) !== 0) {
+  else if (pkg.scripts.test !== testCommand) {
     console.error('A test script has already been specified.');
     console.error('Set it to', JSON.stringify(testCommand), 'to use grunt for tests.');
   }
