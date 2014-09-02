@@ -46,7 +46,7 @@ if (lib.fs.existsSync('package.json')) {
   }
   else {
     console.error('A test script has already been specified.');
-    console.error('Set it to', testCommand, 'to use grunt for tests.');
+    console.error('Set it to', JSON.stringify(testCommand), 'to use grunt for tests.');
   }
 
   if (!pkg.scripts.prepush) {
