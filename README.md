@@ -49,6 +49,10 @@ To be run from the parent project's Gruntfile.js to initialize Grunt with a basi
 
 ## Changelog
 
+### 1.5.1
+
+* Updated `grunt-mocha-istanbul` dependency to once again use a published NPM package
+
 ### 1.5.0
 
 * Change: The ordinary `test` task now excludes tests in an `integration` subfolder of `test/`
