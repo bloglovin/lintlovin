@@ -72,7 +72,7 @@ exports.initConfig = function (grunt, config, options) {
     'grunt-contrib-watch'
   ];
 
-  var testTasks = ['lintspaces', 'jshint'];
+  var testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
   if (!options.noMocha) {
     plugins.push('grunt-mocha-istanbul');
     testTasks.push('mocha_istanbul:basic');
@@ -87,6 +87,10 @@ exports.initConfig = function (grunt, config, options) {
     grunt.loadNpmTasks(name);
   });
   process.chdir(cwd);
+
+  grunt.registerTask('setTestEnv', 'Ensure that environment (database etc) is set up for testing', function () {
+    process.env.NODE_ENV = 'test';
+  });
 
   grunt.registerTask('test', testTasks);
   grunt.registerTask('test-all', options.noIntegration ? 'test' : ['test', 'mocha_istanbul:integration']);

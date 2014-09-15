@@ -49,6 +49,10 @@ To be run from the parent project's Gruntfile.js to initialize Grunt with a basi
 
 ## Changelog
 
+### 1.6.0
+
+* Changed the NODE_ENV environment variable to be set to "test" when running tests
+
 ### 1.5.1
 
 * Updated `grunt-mocha-istanbul` dependency to once again use a published NPM package
