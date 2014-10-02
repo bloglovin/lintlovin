@@ -35,7 +35,10 @@ exports.initConfig = function (grunt, config, options) {
     },
     lintspaces: {
       files: ['<%= jshint.files %>'],
-      options: { editorconfig: '.editorconfig' }
+      options: {
+        editorconfig: '.editorconfig',
+        ignores: ['js-comments'],
+      }
     },
     watch: {
       basic : {

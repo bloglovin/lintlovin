@@ -49,6 +49,10 @@ To be run from the parent project's Gruntfile.js to initialize Grunt with a basi
 
 ## Changelog
 
+### 1.7.0
+
+* Made the whitespace linting ignore indention within JSDoc-style comments
+
 ### 1.6.0
 
 * Changed the NODE_ENV environment variable to be set to "test" when running tests
