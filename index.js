@@ -34,7 +34,7 @@ exports.initConfig = function (grunt, config, options) {
       options: { jshintrc: '.jshintrc' }
     },
     lintspaces: {
-      files: ['<%= jshint.files %>'],
+      files: _.union(['<%= jshint.files %>'], options.spaceFiles || []),
       options: {
         editorconfig: '.editorconfig',
         ignores: ['js-comments'],
@@ -42,10 +42,10 @@ exports.initConfig = function (grunt, config, options) {
     },
     watch: {
       basic : {
-        files: [
+        files: _.union([
           '<%= lintspaces.files %>',
           'test/**/*'
-        ],
+        ], options.watchFiles || []),
         tasks: [!options.noMocha && options.integrationWatch ? 'test-all' : 'test']
       }
     }
