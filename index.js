@@ -76,10 +76,15 @@ exports.initConfig = function (grunt, config, options) {
   ];
 
   var testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
+  var integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
+
   if (!options.noMocha) {
     plugins.push('grunt-mocha-istanbul');
     testTasks.push('mocha_istanbul:basic');
   }
+
+  testTasks = testTasks.concat(options.extraTestTasks || []);
+  integrationTestTasks = integrationTestTasks.concat(options.extraTestAllTasks || []);
 
   // Uhm, HACK! But WTF Grunt!
   var cwd = process.cwd();
@@ -96,6 +101,6 @@ exports.initConfig = function (grunt, config, options) {
   });
 
   grunt.registerTask('test', testTasks);
-  grunt.registerTask('test-all', options.noIntegration ? 'test' : ['test', 'mocha_istanbul:integration']);
+  grunt.registerTask('test-all', integrationTestTasks);
   grunt.registerTask('default', 'test');
 };

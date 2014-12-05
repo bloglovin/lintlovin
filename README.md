@@ -41,12 +41,16 @@ The `npm`-based commands *don't* need [grunt-cli](https://github.com/gruntjs/gru
 
 ## lintlovin.initConfig(grunt[, config] [, options])
 
-To be run from the parent project's Gruntfile.js to initialize Grunt with a basic config by sending the `grunt` object into it and extra configurations apart from the ones Lintlovin defines. One can also optionally specify some options:
+To be run from the parent project's Gruntfile.js. Initializes the `grunt` object sent in with a basic task setup. Also allows additional task setups to be sent in through `config` and for altering the basic setup in some ways through `options`.
+
+### Options
 
 * **integrationWatch** – makes the `watch` task also run tests in `test/integration/`, which can be unfeasable in big projects, but nice in smaller ones. Defaults to `false`.
 * **jsFiles** – an array of additional files to watch and lint. By default `.js`-files in top folder or below the `bin/`, `cli/`, `lib/` or `test/` folders will be watched and linted. (Also any non-js file in `test/` will be watched and will thus retrigger a test when changed)
 * **spaceFiles** – an array of additional files to just watch and whitespace lint.
 * **watchFiles** – an array of additional files to just watch.
+* **extraTestTasks** – an array of additional tasks to add to the `test` task alias
+* **extraTestAllTasks** – an array of additional tasks to add to the `test-all` task alias
 * **noMocha** – disables the [Mocha](http://visionmedia.github.io/mocha/) tests. Mocha tests are otherwise run if a `test/`-folder is found in the parent project.
 
 ## Changelog
