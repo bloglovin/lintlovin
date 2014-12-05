@@ -1,6 +1,6 @@
 {
   "name": "lintlovin",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "The upholder of Bloglovin standards",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git://github.com/bloglovin/lintlovin.git"
   },
+  "homepage": "https://github.com/bloglovin/lintlovin",
   "dependencies": {
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",
