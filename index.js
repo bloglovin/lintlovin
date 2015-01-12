@@ -52,6 +52,13 @@ exports.initConfig = function (grunt, config, options) {
     }
   };
 
+  defaults['dependency-check'] = {
+    files: _.union(['<%= jshint.files %>'], options.dependencyFiles || []),
+    options: {
+      excludeMissingDev: true,
+    }
+  };
+
   if (!options.noMocha) {
     defaults.mocha_istanbul = {
       options: {
