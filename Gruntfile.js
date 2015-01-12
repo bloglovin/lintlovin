@@ -5,5 +5,7 @@
 var lintlovin = require('./');
 
 module.exports = function (grunt) {
-  lintlovin.initConfig(grunt);
+  lintlovin.initConfig(grunt, {}, {
+    dependencyFiles: ['!bin/Gruntfile.default.js'],
+  });
 };

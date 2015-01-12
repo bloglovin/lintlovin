@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/bloglovin/lintlovin",
   "dependencies": {
+    "dependency-check": "^2.0.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-lintspaces": "~0.6.0",

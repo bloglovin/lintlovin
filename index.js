@@ -29,7 +29,8 @@ exports.initConfig = function (grunt, config, options) {
         'lib/**/*.js',
         'test/**/*.js',
         'bin/**/*.js',
-        'cli/**/*.js'
+        'cli/**/*.js',
+        'tasks/**/*.js',
       ], options.jsFiles || []),
       options: { jshintrc: '.jshintrc' }
     },
@@ -75,7 +76,7 @@ exports.initConfig = function (grunt, config, options) {
     'grunt-contrib-watch'
   ];
 
-  var testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
+  var testTasks = ['lintspaces', 'jshint', 'dependency-check', 'setTestEnv'];
   var integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
 
   if (!options.noMocha) {
@@ -95,6 +96,8 @@ exports.initConfig = function (grunt, config, options) {
     grunt.loadNpmTasks(name);
   });
   process.chdir(cwd);
+
+  grunt.loadTasks('tasks');
 
   grunt.registerTask('setTestEnv', 'Ensure that environment (database etc) is set up for testing', function () {
     process.env.NODE_ENV = 'test';
