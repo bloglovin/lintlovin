@@ -1,3 +1,16 @@
+## 1.9.0 (2015-01-12)
+
+
+#### Bug Fixes
+
+* **main:** exclude devDependencies in check ([70533019](https://github.com/bloglovin/lintlovin/commit/70533019fe3350a86c79b7e097c915723025f0b6))
+
+
+#### Features
+
+* **main:** added dependency checks ([bd824c19](https://github.com/bloglovin/lintlovin/commit/bd824c19bd6d03675be24782307c99b43040f838))
+
+
 ## 1.8.0 (2014-12-05)
 
 
