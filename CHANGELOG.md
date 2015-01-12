@@ -1,3 +1,11 @@
+### 1.9.1 (2015-01-12)
+
+
+#### Bug Fixes
+
+* **main:** pass an absolute path to loadTasks so that grunt finds bundled tasks ([a2a8243d](https://github.com/bloglovin/lintlovin/commit/a2a8243dec8cbbfc410a59953d724b27944f9210))
+
+
 ## 1.9.0 (2015-01-12)
 
 
