@@ -104,7 +104,7 @@ exports.initConfig = function (grunt, config, options) {
   });
   process.chdir(cwd);
 
-  grunt.loadTasks('tasks');
+  grunt.loadTasks(lib.path.join(__dirname, 'tasks'));
 
   grunt.registerTask('setTestEnv', 'Ensure that environment (database etc) is set up for testing', function () {
     process.env.NODE_ENV = 'test';
