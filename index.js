@@ -80,7 +80,8 @@ exports.initConfig = function (grunt, config, options) {
     'grunt-notify',
     'grunt-lintspaces',
     'grunt-contrib-jshint',
-    'grunt-contrib-watch'
+    'grunt-contrib-watch',
+    'dependency-check',
   ];
 
   var testTasks = ['lintspaces', 'jshint', 'dependency-check', 'setTestEnv'];
@@ -104,7 +105,8 @@ exports.initConfig = function (grunt, config, options) {
   });
   process.chdir(cwd);
 
-  grunt.loadTasks(lib.path.join(__dirname, 'tasks'));
+  // Whenever we have some special built tasks, add them into the /tasks folder and uncomment the line below
+  // grunt.loadTasks(lib.path.join(__dirname, 'tasks'));
 
   grunt.registerTask('setTestEnv', 'Ensure that environment (database etc) is set up for testing', function () {
     process.env.NODE_ENV = 'test';
