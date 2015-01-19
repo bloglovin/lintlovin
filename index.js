@@ -11,6 +11,9 @@ exports.initConfig = function (grunt, config, options) {
   config = config || {};
   options = options || {};
 
+  if (!options.noTiming) {
+    require('time-grunt')(grunt);
+  }
   if (options.noMocha === undefined) {
     options.noMocha = !lib.fs.existsSync('test');
   }

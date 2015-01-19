@@ -24,7 +24,8 @@
     "grunt-lintspaces": "~0.6.0",
     "grunt-mocha-istanbul": "^2.1.0",
     "grunt-notify": "~0.3.1",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "time-grunt": "^1.0.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.5",

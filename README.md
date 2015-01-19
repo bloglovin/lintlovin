@@ -53,3 +53,4 @@ To be run from the parent project's Gruntfile.js. Initializes the `grunt` object
 * **extraTestTasks** – an array of additional tasks to add to the `test` task alias
 * **extraTestAllTasks** – an array of additional tasks to add to the `test-all` task alias
 * **noMocha** – disables the [Mocha](http://visionmedia.github.io/mocha/) tests. Mocha tests are otherwise run if a `test/`-folder is found in the parent project.
+* **noTiming** – disables the [time-grunt](https://github.com/sindresorhus/time-grunt) performance output
