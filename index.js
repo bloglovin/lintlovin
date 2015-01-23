@@ -24,6 +24,7 @@ exports.initConfig = function (grunt, config, options) {
     options.noIntegration = !lib.fs.existsSync('test/integration');
   }
 
+  // Default task options
   var defaults = {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
@@ -52,7 +53,7 @@ exports.initConfig = function (grunt, config, options) {
         ], options.watchFiles || []),
         tasks: [!options.noMocha && options.integrationWatch ? 'test-all' : 'test']
       }
-    }
+    },
   };
 
   defaults['dependency-check'] = {
@@ -76,6 +77,13 @@ exports.initConfig = function (grunt, config, options) {
     };
   }
 
+  if (!options.noJSCS) {
+    defaults.jscs = {
+      src: '<%= jshint.files %>',
+      options: {config: '.jscs'}
+    };
+  }
+
   _.defaults(config, defaults);
   grunt.initConfig(config);
 
@@ -93,6 +101,11 @@ exports.initConfig = function (grunt, config, options) {
   if (!options.noMocha) {
     plugins.push('grunt-mocha-istanbul');
     testTasks.push('mocha_istanbul:basic');
+  }
+
+  if (!options.noJSCS) {
+    plugins.push('grunt-jscs');
+    testTasks.push('jscs');
   }
 
   testTasks = testTasks.concat(options.extraTestTasks || []);
