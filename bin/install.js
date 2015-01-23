@@ -24,6 +24,12 @@ if (!lib.fs.existsSync('.jshintrc')) {
   lib.fs.symlinkSync(rel, '.jshintrc');
 }
 
+if (!lib.fs.existsSync('.jscs')) {
+  var config = lib.path.resolve(__dirname, '../.jscs');
+  var rel = lib.path.relative(process.cwd(), config);
+  lib.fs.symlinkSync(rel, '.jscs');
+}
+
 if (!lib.fs.existsSync('Gruntfile.js')) {
   var grunt = lib.fs.readFileSync(lib.path.join(__dirname, 'Gruntfile.default.js'), {
     encoding: 'utf8'
