@@ -97,14 +97,14 @@ exports.initConfig = function (grunt, config, options) {
   var testTasks = ['lintspaces', 'jshint', 'dependency-check', 'setTestEnv'];
   var integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
 
-  if (!options.noMocha) {
-    plugins.push('grunt-mocha-istanbul');
-    testTasks.push('mocha_istanbul:basic');
-  }
-
   if (!options.noJSCS) {
     plugins.push('grunt-jscs');
     testTasks.push('jscs');
+  }
+
+  if (!options.noMocha) {
+    plugins.push('grunt-mocha-istanbul');
+    testTasks.push('mocha_istanbul:basic');
   }
 
   testTasks = testTasks.concat(options.extraTestTasks || []);
