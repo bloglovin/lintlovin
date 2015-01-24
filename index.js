@@ -80,7 +80,6 @@ exports.initConfig = function (grunt, config, options) {
   if (!options.noJSCS) {
     defaults.jscs = {
       src: '<%= jshint.files %>',
-      options: {config: '.jscs'}
     };
   }
 

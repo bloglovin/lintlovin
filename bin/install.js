@@ -24,10 +24,10 @@ if (!lib.fs.existsSync('.jshintrc')) {
   lib.fs.symlinkSync(rel, '.jshintrc');
 }
 
-if (!lib.fs.existsSync('.jscs')) {
-  var config = lib.path.resolve(__dirname, '../.jscs');
+if (!lib.fs.existsSync('.jscsrc')) {
+  var config = lib.path.resolve(__dirname, '../.jscsrc');
   var rel = lib.path.relative(process.cwd(), config);
-  lib.fs.symlinkSync(rel, '.jscs');
+  lib.fs.symlinkSync(rel, '.jscsrc');
 }
 
 if (!lib.fs.existsSync('Gruntfile.js')) {
