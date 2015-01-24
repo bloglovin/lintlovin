@@ -39,7 +39,10 @@ exports.initConfig = function (grunt, config, options) {
       options: { jshintrc: '.jshintrc' }
     },
     lintspaces: {
-      files: _.union(['<%= jshint.files %>'], options.spaceFiles || []),
+      files: _.union([
+        '<%= jshint.files %>',
+        'package.json',
+      ], options.spaceFiles || []),
       options: {
         editorconfig: '.editorconfig',
         ignores: ['js-comments'],
