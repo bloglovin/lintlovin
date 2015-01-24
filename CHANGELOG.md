@@ -1,3 +1,14 @@
+## 1.10.0 (2015-01-24)
+
+
+#### Features
+
+* **jscs:** added jscs grunt task ([625bc315](https://github.com/bloglovin/lintlovin/commit/625bc315f480014d4b7bda5176573545b68d93cc))
+* **main:**
+  * package.json now whitespace linted ([eb1b199a](https://github.com/bloglovin/lintlovin/commit/eb1b199a57104a102634ea7aefb0b4fb9db54527))
+  * added time-grunt to track performance ([4c11d007](https://github.com/bloglovin/lintlovin/commit/4c11d007849e381dfd67977a3e4ea0ba2654af39))
+
+
 ### 1.9.1 (2015-01-12)
 
 
