@@ -1,3 +1,7 @@
 {
-  "disallowMixedSpacesAndTabs": true
+  "preset": "crockford",
+  "validateIndentation": 2,
+  "disallowTrailingComma": null,
+  "requireMultipleVarDecl": null,
+  "disallowDanglingUnderscores": null
 }
