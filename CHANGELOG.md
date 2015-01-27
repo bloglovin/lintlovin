@@ -1,3 +1,11 @@
+## 1.11.0 (2015-01-27)
+
+
+#### Features
+
+* **style:** new styleguide rules ([e27581e4](https://github.com/bloglovin/lintlovin/commit/e27581e4b533cb6281cec5dafced30130595765a))
+
+
 ## 1.10.0 (2015-01-24)
 
 
