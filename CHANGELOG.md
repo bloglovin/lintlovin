@@ -1,3 +1,11 @@
+## 1.12.0 (2015-02-05)
+
+
+#### Features
+
+* **main:** add option for disabling dep. check ([56396768](https://github.com/bloglovin/lintlovin/commit/563967680db82529d503554972ac8d5445cbef94))
+
+
 ## 1.11.0 (2015-01-27)
 
 
