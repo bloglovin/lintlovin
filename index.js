@@ -59,12 +59,14 @@ exports.initConfig = function (grunt, config, options) {
     },
   };
 
-  defaults['dependency-check'] = {
-    files: _.union(['<%= jshint.files %>'], options.dependencyFiles || []),
-    options: {
-      excludeMissingDev: true,
-    }
-  };
+  if (!options.noDependencyCheck) {
+    defaults['dependency-check'] = {
+      files: _.union(['<%= jshint.files %>'], options.dependencyFiles || []),
+      options: {
+        excludeMissingDev: true,
+      }
+    };
+  }
 
   if (!options.noMocha) {
     defaults.mocha_istanbul = {
@@ -94,15 +96,19 @@ exports.initConfig = function (grunt, config, options) {
     'grunt-lintspaces',
     'grunt-contrib-jshint',
     'grunt-contrib-watch',
-    'dependency-check',
   ];
 
-  var testTasks = ['lintspaces', 'jshint', 'dependency-check', 'setTestEnv'];
+  var testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
   var integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
 
   if (!options.noJSCS) {
     plugins.push('grunt-jscs');
     testTasks.push('jscs');
+  }
+
+  if (!options.noDependencyCheck) {
+    plugins.push('dependency-check');
+    testTasks.push('dependency-check');
   }
 
   if (!options.noMocha) {
