@@ -3,5 +3,6 @@
   "validateIndentation": 2,
   "disallowTrailingComma": null,
   "requireMultipleVarDecl": null,
-  "disallowDanglingUnderscores": null
+  "disallowDanglingUnderscores": null,
+  "requireBlocksOnNewline": 1
 }
