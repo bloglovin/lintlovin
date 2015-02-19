@@ -1,3 +1,11 @@
+## 1.13.0 (2015-02-19)
+
+
+#### Features
+
+* **style:** allow one statement inline blocks ([02c99c14](https://github.com/bloglovin/lintlovin/commit/02c99c14c157dd571b412e94744a541130d4686e))
+
+
 ## 1.12.0 (2015-02-05)
 
 
