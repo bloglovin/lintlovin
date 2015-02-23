@@ -1,3 +1,18 @@
+## 1.14.0 (2015-02-23)
+
+
+#### Bug Fixes
+
+* **main:** updated outdated dependencies ([8d122f29](https://github.com/bloglovin/lintlovin/commit/8d122f29a66c63e1b508aa911fa41303339b0812))
+
+
+#### Features
+
+* **main:**
+  * added option for extra default tasks ([1df37fd6](https://github.com/bloglovin/lintlovin/commit/1df37fd6e172d446103bb46aa4e3b0d14ba21852))
+  * added ”extraWatchTasks” option ([9939850e](https://github.com/bloglovin/lintlovin/commit/9939850e126bfcc54f51ed9ea83bdda0e0a7194e))
+
+
 ## 1.13.0 (2015-02-19)
 
 
