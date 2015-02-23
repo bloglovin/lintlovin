@@ -19,13 +19,13 @@
   "homepage": "https://github.com/bloglovin/lintlovin",
   "dependencies": {
     "dependency-check": "^2.1.0",
-    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-jshint": "~0.11.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-jscs": "^1.2.0",
     "grunt-lintspaces": "~0.6.0",
     "grunt-mocha-istanbul": "^2.1.0",
-    "grunt-notify": "~0.3.1",
-    "lodash": "^2.4.1",
+    "grunt-notify": ">=0.3.1 <0.5.0",
+    "lodash": "^3.0.0",
     "time-grunt": "^1.0.0"
   },
   "peerDependencies": {
@@ -35,7 +35,7 @@
     "mocha": ">=1.21.4-0 <3.0.0-0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "chai": "^2.0.0",
     "grunt": "~0.4.5",
     "husky": "~0.6.1",
     "js-yaml": "^3.2.1",
