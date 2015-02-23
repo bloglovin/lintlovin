@@ -48,7 +48,7 @@ exports.initConfig = function (grunt, config, options) {
         ignores: ['js-comments'],
       }
     },
-    watch: {
+    watch: _.defaults(options.extraWatchTasks || {}, {
       basic : {
         files: _.union([
           '<%= lintspaces.files %>',
@@ -56,7 +56,7 @@ exports.initConfig = function (grunt, config, options) {
         ], options.watchFiles || []),
         tasks: [!options.noMocha && options.integrationWatch ? 'test-all' : 'test']
       }
-    },
+    }),
   };
 
   if (!options.noDependencyCheck) {
