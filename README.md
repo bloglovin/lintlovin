@@ -35,6 +35,7 @@ Rationale for not forcing camelCase: It's quite common to get data from modules 
 
 The `npm`-based commands *don't* need [grunt-cli](https://github.com/gruntjs/grunt-cli), but the `grunt` commands do.
 
+* **default** – the default task, the one invoked when running just `grunt`, will if no additional tasks are added just run the `test` task.
 * **test** – lints all files to the defined JSHint and EditorConfig coding style guidelines and, unless `noMocha` has been set to `true`, runs all tests in a `test/`-folder if such a one exist, with the exclusion of any tests in a `test/integration/` folder. Can be invoked through either `grunt test` or `npm test`.
 * **test-all** – like `test`, but also runs the tests in the `test/integration/` folder. Can be invoked through either `grunt test-all` or `npm run test-all`.
 * **watch** – watches for file changes and runs `test` on any relevant change. Can be invoked through `grunt watch`.
@@ -50,6 +51,7 @@ To be run from the parent project's Gruntfile.js. Initializes the `grunt` object
 * **spaceFiles** – an array of additional files to just watch and whitespace lint.
 * **dependencyFiles** – an array of additional files to just check for dependencies.
 * **watchFiles** – an array of additional files to just watch.
+* **extraDefaultTasks** – an array of additional tasks to add to the `default` task alias
 * **extraTestTasks** – an array of additional tasks to add to the `test` task alias
 * **extraTestAllTasks** – an array of additional tasks to add to the `test-all` task alias
 * **extraWatchTasks** – an object of additional watch task definitions

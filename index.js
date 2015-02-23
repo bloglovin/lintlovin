@@ -138,5 +138,5 @@ exports.initConfig = function (grunt, config, options) {
 
   grunt.registerTask('test', testTasks);
   grunt.registerTask('test-all', integrationTestTasks);
-  grunt.registerTask('default', 'test');
+  grunt.registerTask('default', ['test'].concat(options.extraDefaultTasks || []));
 };
