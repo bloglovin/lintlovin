@@ -51,6 +51,7 @@ To be run from the parent project's Gruntfile.js. Initializes the `grunt` object
 * **spaceFiles** – an array of additional files to just watch and whitespace lint.
 * **dependencyFiles** – an array of additional files to just check for dependencies.
 * **watchFiles** – an array of additional files to just watch.
+* **enableCoverageEvent** – enables the [grunt-mocha-istanbul coverage event](https://github.com/pocesar/grunt-mocha-istanbul#the-coverage-event) on tests
 * **extraDefaultTasks** – an array of additional tasks to add to the `default` task alias
 * **extraTestTasks** – an array of additional tasks to add to the `test` task alias
 * **extraTestAllTasks** – an array of additional tasks to add to the `test-all` task alias

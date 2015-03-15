@@ -71,7 +71,9 @@ exports.initConfig = function (grunt, config, options) {
   if (!options.noMocha) {
     defaults.mocha_istanbul = {
       options: {
-        ui: 'tdd'
+        ui: 'tdd',
+        coverage: options.enableCoverageEvent === true,
+        reportFormats: ['lcov']
       },
       basic: {
         src: ['test/**/*.js', '!test/integration/**/*.js']
