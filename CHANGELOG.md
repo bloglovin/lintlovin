@@ -1,3 +1,16 @@
+## 1.15.0 (2015-03-15)
+
+
+#### Bug Fixes
+
+* **main:** upgraded Husky to 0.7.0 ([f4706186](https://github.com/bloglovin/lintlovin/commit/f4706186a9efe6d58f190a8bab4e4c2f87d89173), closes [#13](https://github.com/bloglovin/lintlovin/issues/13))
+
+
+#### Features
+
+* **main:** new ”enableCoverageEvent” option ([67673423](https://github.com/bloglovin/lintlovin/commit/67673423fecf43d1c2d4193e285bb1cfa49ab393))
+
+
 ## 1.14.0 (2015-02-23)
 
 
