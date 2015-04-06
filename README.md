@@ -61,3 +61,4 @@ To be run from the parent project's Gruntfile.js. Initializes the `grunt` object
 * **noTiming** – disables the [time-grunt](https://github.com/sindresorhus/time-grunt) performance output
 * **noJSCS** – disables the [jscs](http://jscs.info/) plugin
 * **noDependencyCheck** – disables the [dependency-check](https://github.com/maxogden/dependency-check) plugin
+* **ignoreUnusedDependencies** – ignores the specified modules when looking for unused modules

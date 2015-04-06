@@ -64,15 +64,7 @@ exports.initConfig = function (grunt, config, options) {
       files: _.union(['<%= jshint.files %>'], options.dependencyFiles || []),
       options: {
         excludeUnusedDev: true,
-        ignoreUnused: [
-          'dependency-check',
-          'grunt-contrib-jshint',
-          'grunt-contrib-watch',
-          'grunt-jscs',
-          'grunt-lintspaces',
-          'grunt-mocha-istanbul',
-          'grunt-notify',
-        ]
+        ignoreUnused: options.ignoreUnusedDependencies || [],
       }
     };
   }
