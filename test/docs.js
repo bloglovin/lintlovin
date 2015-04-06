@@ -16,7 +16,7 @@ suite('README', function testClient() {
   test('Documented JSHint rules matches .jshintrc', function checkJSHintDocs(done) {
     var yaml = /`{3}yaml([^`]+)`{3}/m;
     var readme = lib.fs.readFileSync('README.md', {encoding: 'utf8'});
-    var jshintrc = lib.fs.readFileSync('.jshintrc', {encoding:'utf8'});
+    var jshintrc = lib.fs.readFileSync('.jshintrc', {encoding: 'utf8'});
     var jshintOptions = JSON.parse(jshintrc);
 
     var yamlBlock = yaml.exec(readme);
