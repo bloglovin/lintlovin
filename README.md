@@ -60,3 +60,4 @@ To be run from the parent project's Gruntfile.js. Initializes the `grunt` object
 * **noMocha** – disables the [Mocha](http://visionmedia.github.io/mocha/) tests. Mocha tests are otherwise run if a `test/`-folder is found in the parent project.
 * **noTiming** – disables the [time-grunt](https://github.com/sindresorhus/time-grunt) performance output
 * **noJSCS** – disables the [jscs](http://jscs.info/) plugin
+* **noDependencyCheck** – disables the [dependency-check](https://github.com/maxogden/dependency-check) plugin
