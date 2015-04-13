@@ -1,3 +1,11 @@
+### 1.15.1 (2015-04-13)
+
+
+#### Bug Fixes
+
+* **dependency-check:** ignore unused grunt modules ([adf83449](https://github.com/bloglovin/lintlovin/commit/adf834495fc26a1312ca6dd609521226c8682fdd))
+
+
 ## 1.15.0 (2015-03-15)
 
 
