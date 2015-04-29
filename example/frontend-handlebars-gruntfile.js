@@ -13,9 +13,10 @@ var Handlebars = require('handlebars');
 // Folders:
 //   js/       – the frontend js
 //   css/      – the compiled frontend css
-//   html/     – the Handlebar templates to render
+//   html/     – the Handlebars templates to render
 //   example/  – the example HTML to use with the built in development server
 //   src/scss/ – the sass source files
+//   dummy.json - the dummy data to send into the Handlebars templates
 //   + any other top level folder will also be reachable by the built in server
 
 // Start the built in server with automated watching, linting and compiling by running: "grunt server"
@@ -24,10 +25,6 @@ var Handlebars = require('handlebars');
 //   grunt-contrib-connect
 //   grunt-sass
 //   handlebars
-
-var dummyTemplateData = {
-  foo: 'bar',
-};
 
 module.exports = function (grunt) {
   lintlovin.initConfig(grunt, {
@@ -45,14 +42,25 @@ module.exports = function (grunt) {
             middlewares.unshift(function (req, res, next) {
               if (req.url.indexOf('/html/') !== 0 || req.url.indexOf('.html') === -1) { return next(); }
 
-              fs.readFile(
-                req.url.slice(1, req.url.indexOf('.html') + '.html'.length),
-                { encoding: 'utf8' },
-                function (err, content) {
-                  if (err) { return next(err); }
-                  res.end(Handlebars.compile(content)(dummyTemplateData));
+              fs.readFile('dummy.json', { encoding: 'utf8' }, function (err, dummyTemplateData) {
+                if (err) { return next(err); }
+
+                try {
+                  dummyTemplateData = JSON.parse(dummyTemplateData);
+                } catch (err) {
+                  return next(err);
                 }
-              );
+
+                fs.readFile(
+                  req.url.slice(1, req.url.indexOf('.html') + '.html'.length),
+                  { encoding: 'utf8' },
+                  function (err, content) {
+                    if (err) { return next(err); }
+
+                    res.end(Handlebars.compile(content)(dummyTemplateData));
+                  }
+                );
+              });
             });
 
             return middlewares;
