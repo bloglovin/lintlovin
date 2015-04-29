@@ -48,7 +48,7 @@ module.exports = function (grunt) {
     spaceFiles: [
       '*.json',
     ],
-    integrationWatch : true,
+    extraDefaultTasks: ['sass'],
     extraWatchTasks: {
       sass: {
         files: ['src/scss/**/*.scss'],
@@ -64,5 +64,4 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-sass');
 
-  grunt.registerTask('server', ['connect', 'watch']);
-};
+  grunt.registerTask('server', ['default', 'connect', 'watch']);
