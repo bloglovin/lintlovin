@@ -18,27 +18,29 @@
   },
   "homepage": "https://github.com/bloglovin/lintlovin",
   "dependencies": {
-    "dependency-check": "^2.1.0",
-    "grunt-contrib-jshint": "~0.11.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-jscs": "^1.2.0",
-    "grunt-lintspaces": "~0.6.0",
-    "grunt-mocha-istanbul": "^2.1.0",
+    "dependency-check": "^2.8.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-dependency-check": "^1.1.0",
+    "grunt-jscs": "^3.0.1",
+    "grunt-lintspaces": "~0.8.1",
+    "grunt-mocha-istanbul": "^5.0.2",
     "grunt-notify": ">=0.3.1 <0.5.0",
-    "lodash": "^3.0.0",
+    "lodash": "^4.17.4",
     "time-grunt": "^1.0.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5",
-    "husky": ">=0.6.1 <0.8.0",
-    "istanbul": "~0.3.0",
-    "mocha": ">=1.21.4-0 <3.0.0-0"
+    "grunt": "~1.0.1",
+    "husky": "~0.13.2",
+    "mocha": "^3.2.0",
+    "istanbul": "~0.3.0"
   },
   "devDependencies": {
-    "chai": "^2.0.0",
-    "grunt": "~0.4.5",
-    "husky": "~0.7.0",
+    "chai": "^3.5.0",
+    "grunt": "~1.0.1",
+    "husky": "~0.13.2",
     "js-yaml": "^3.2.1",
-    "mocha": ">=1.21.4-0 <3.0.0-0"
+    "mocha": "^3.2.0",
+    "istanbul": "~0.3.0"
   }
 }
