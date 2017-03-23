@@ -8,6 +8,7 @@ var lib = {
 var _ = require('lodash');
 
 exports.initConfig = function (grunt, config, options) {
+  var defaults, plugins, testTasks, integrationTestTasks, cwd;
   config = config || {};
   options = options || {};
 
@@ -25,14 +26,13 @@ exports.initConfig = function (grunt, config, options) {
   }
 
   // Default task options
-  var defaults = {
+  defaults = {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       files: _.union([
         '*.js',
         'lib/**/*.js',
         'test/**/*.js',
-        'bin/**/*.js',
         'cli/**/*.js',
         'tasks/**/*.js',
       ], options.jsFiles || []),
@@ -59,16 +59,6 @@ exports.initConfig = function (grunt, config, options) {
     }),
   };
 
-  if (!options.noDependencyCheck) {
-    defaults['dependency-check'] = {
-      files: _.union(['<%= jshint.files %>'], options.dependencyFiles || []),
-      options: {
-        excludeUnusedDev: true,
-        ignoreUnused: options.ignoreUnusedDependencies || [],
-      }
-    };
-  }
-
   if (!options.noMocha) {
     defaults.mocha_istanbul = {
       options: {
@@ -94,24 +84,19 @@ exports.initConfig = function (grunt, config, options) {
   _.defaults(config, defaults);
   grunt.initConfig(config);
 
-  var plugins = [
+  plugins = [
     'grunt-notify',
     'grunt-lintspaces',
     'grunt-contrib-jshint',
     'grunt-contrib-watch',
   ];
 
-  var testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
-  var integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
+  testTasks = ['lintspaces', 'jshint', 'setTestEnv'];
+  integrationTestTasks = options.noIntegration ? ['test'] : ['test', 'mocha_istanbul:integration'];
 
   if (!options.noJSCS) {
     plugins.push('grunt-jscs');
     testTasks.push('jscs');
-  }
-
-  if (!options.noDependencyCheck) {
-    plugins.push('dependency-check');
-    testTasks.push('dependency-check');
   }
 
   if (!options.noMocha) {
@@ -123,7 +108,7 @@ exports.initConfig = function (grunt, config, options) {
   integrationTestTasks = integrationTestTasks.concat(options.extraTestAllTasks || []);
 
   // Uhm, HACK! But WTF Grunt!
-  var cwd = process.cwd();
+  cwd = process.cwd();
   process.chdir(__dirname);
   // Manually load the plugins so that we don't pollute the parent module
   // with loads of peer dependencies.

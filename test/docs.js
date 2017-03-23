@@ -20,10 +20,11 @@ suite('README', function testClient() {
     var jshintOptions = JSON.parse(jshintrc);
 
     var yamlBlock = yaml.exec(readme);
+    var documentedOptions;
     if (!yamlBlock) {
       throw new Error('No yaml code block in the readme');
     }
-    var documentedOptions = lib.jsYaml.safeLoad(yamlBlock[1]);
+    documentedOptions = lib.jsYaml.safeLoad(yamlBlock[1]);
 
     expect(documentedOptions).to.deep.equal(jshintOptions);
     done();
